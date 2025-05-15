@@ -49,5 +49,22 @@ string runArgSpliter (int argc , char * argv[])
 
 int main(int argc , char * argv[])
 {
-    meow(runArgSpliter(argc , argv));
+    if (argc > 1)
+    {
+        meow(runArgSpliter(argc , argv));
+    }
+    else 
+    {
+        cout << R"($ ./your_program
+Usage: ./your_program <text>
+Description: This program takes a string as an argument and prints it with a cat ASCII art.
+Example: ./your_program Hello
+This will print:
+       Hello
+ ／l 
+（ﾟ､ ｡７
+  l  ~ヽ
+  じしf_,)ノ
+)";
+    }
 }
