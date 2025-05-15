@@ -1,5 +1,6 @@
 #include <iostream>
 
+
 using namespace std;
 
 
@@ -26,18 +27,27 @@ void meow (string text)
 
 
 
+string runArgSpliter (int argc , char * argv[])
+{
+    string tmp;
+
+    for (int i = 1 ; i < argc ; i++)
+    {
+        tmp = tmp + argv[i] ;
+        tmp = tmp + ' ';
+    }
+
+    return tmp;
+}
+
+
+
+
+
+
+
 
 int main(int argc , char * argv[])
 {
-    if (argc > 1)
-    {
-        meow((argv[1]));
-    }
-    else 
-    {
-        string text;
-        cin >> text;
-        system("clear");
-        meow(text);
-    }
+    meow(runArgSpliter(argc , argv));
 }
